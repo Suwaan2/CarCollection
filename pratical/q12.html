@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Object-Oriented Programming in JavaScript</title>
+    <script>
+        // Define a Car class
+        class Car {
+            // Constructor to initialize the car object
+            constructor(make, model, year, color) {
+                this.make = make;
+                this.model = model;
+                this.year = year;
+                this.color = color;
+            }
+
+            // Method to display car information
+            displayInfo() {
+                return `Car: ${this.year} ${this.make} ${this.model}, Color: ${this.color}`;
+            }
+
+            // Method to change the color of the car
+            changeColor(newColor) {
+                this.color = newColor;
+                return `Changed color to ${this.color}.`;
+            }
+        }
+
+        // Create car objects using the Car class
+        const car1 = new Car('Toyota', 'Camry', 2022, 'Red');
+        const car2 = new Car('Honda', 'Accord', 2020, 'Blue');
+
+        // Display car information
+        console.log(car1.displayInfo());
+        console.log(car2.displayInfo());
+
+        // Change car color
+        console.log(car1.changeColor('Green'));
+        console.log(car2.changeColor('Silver'));
+    </script>
+</head>
+<body>
+    <h1>Object-Oriented Programming in JavaScript</h1>
+   
+</body>
+</html>

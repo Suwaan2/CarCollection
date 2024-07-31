@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Change Background Image Example</title>
+    <style>
+        body {
+            background-image: url('default-background.jpg');
+            background-size: cover;
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+        }
+
+        button {
+            padding: 10px 20px;
+            font-size: 16px;
+            cursor: pointer;
+            border: none;
+            background-color: #3498db;
+            color: white;
+            border-radius: 5px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Change Background Image Example</h1>
+    <button onclick="changeBackground()">Change Background Image</button>
+
+    <script>
+        function changeBackground() {
+            const body = document.body;
+            const currentBg = body.style.backgroundImage;
+
+            if (currentBg.includes('default-background.jpg')) {
+                body.style.backgroundImage = "url('1.jpg')";
+            } else {
+                body.style.backgroundImage = "url('3.jpg')";
+            }
+        }
+    </script>
+</body>
+</html>

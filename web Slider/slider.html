@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #slider {
+  width: 600px;
+  height: 400px;
+  overflow: hidden;
+}
+.slider img{
+    height: 600px;
+    width: 600px;
+}
+.slide {
+  width: 600px;
+  height: 400px;
+  float: left;
+}
+        
+
+    </style>
+</head>
+<body>
+    <div id="slider">
+        <div class="slide"><img src="../Assets/ai-generated-8720215_1280.png" alt=""></div>
+            <div class="slide"><img src="../Assets/car-2209439_1280.png" alt=""></div>
+        <!-- Add more slides as needed -->
+      </div>
+      <script>
+
+      let index = 0; // Current slide
+const slides = document.querySelectorAll(".slide");
+
+function showSlide(n) {
+  slides.forEach((slide, i) => {
+    slide.style.display = i === n ? "block" : "none";
+  });
+}
+
+// Next/previous controls
+function changeSlides(n) {
+  index += n;
+  if (index >= slides.length) index = 0;
+  if (index < 0) index = slides.length - 1;
+  showSlide(index);
+}
+
+// Initial display
+showSlide(index);
+      </script>
+</body>
+</html>

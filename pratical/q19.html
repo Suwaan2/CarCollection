@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JSON Parse and Stringify Example</title>
+</head>
+<body>
+    <h1>JSON Parse and Stringify Example</h1>
+
+    <script>
+        // Example JSON data
+        const jsonString = `{
+            "name": "John Doe",
+            "age": 30,
+            "isStudent": false,
+            "address": {
+                "street": "123 Main St",
+                "city": "Anytown",
+                "state": "CA",
+                "postalCode": "90210"
+            },
+            "friends": ["Jane", "James", "Emily"]
+        }`;
+
+        // JSON.parse() example
+        const parsedData = JSON.parse(jsonString);
+        console.log('Parsed JSON:');
+        console.log(parsedData);
+
+        // JSON.stringify() example
+        const dataObject = {
+            name: 'Alice Smith',
+            age: 25,
+            isStudent: true,
+            address: {
+                street: '456 Oak Ave',
+                city: 'Smallville',
+                state: 'NY',
+                postalCode: '12345'
+            },
+            friends: ['Bob', 'Carol', 'David']
+        };
+
+        const jsonStringified = JSON.stringify(dataObject, null, 2);
+        console.log('Stringified JSON:');
+        console.log(jsonStringified);
+    </script>
+</body>
+</html>

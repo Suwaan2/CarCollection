@@ -12,6 +12,7 @@
 body {
   color: white;
   font-family: "Delius", cursive;
+ 
 }
 
 nav {
@@ -38,7 +39,7 @@ nav img.logo-img {
   height: 80px;
 }
 
-ul {
+.cng{
   display: flex;
   align-items: center;
 }
@@ -80,7 +81,7 @@ li:hover {
 /* Information Section  */
 .about {
   margin-top: 2px;
-  height: 50vh;
+  height: 70vh;
   background: black;
   display: flex;
   align-items: center;
@@ -98,3 +99,71 @@ li:hover {
   font-size: 27px;
   color: yellow;
 }
+
+
+/* Animation Sector for testing */
+ #animat{
+    background-color: black;
+    height: 40vh;
+    width: 100%;
+    
+}
+
+
+ .wraper{
+    display: flex;
+ }
+ .wraper .static{
+    color: #fff;
+    font-size: 60px;
+    font-weight: 400;
+ }
+ .wraper .dyanmic{
+    margin-left: 15px;
+    line-height: 90px;
+    height: 90px;
+    overflow: hidden;
+ }
+ .dyanmic li{
+    list-style: none;
+    color: #ff4c29;
+    font-size: 60px;
+    font-weight: 500;
+    top: 0;
+    position: relative;
+    animation: slide 12s steps(4) infinite; 
+
+  } 
+  @keyframes slide{
+    100%{
+        top: -380px;
+    }
+    
+ }
+ .dyanmic li{
+    position: relative;
+ }
+ .dyanmic li::after{
+content: "";
+position: absolute;
+left:0;
+height: 100%;
+width: 100%;
+background-color: #44c527;
+border-left:2px solid #ff4c29;
+animation: typing 3s steps(10) infinite;
+}
+
+@keyframes typing {
+    40%,
+    60%{
+        left: calc(100% + 30px);
+    }
+    100%{
+        left: 0;
+    }
+    
+} 
+ #animat{
+    color: black;
+ }

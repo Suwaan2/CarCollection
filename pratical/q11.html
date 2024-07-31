@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Dialog Boxes and Multiplication Example</h1>
+    <button onclick="showAlert()">Show Alert</button>
+    <button onclick="showConfirm()">Show Confirm</button>
+    <button onclick="showPrompt()">Show Prompt</button>
+    <button onclick="multiplyNumbers()">Multiply Two Numbers</button>
+        <script>
+        function showAlert() {
+            alert("This is an alert dialog box!");
+        }
+
+        function showConfirm() {
+            if (confirm("Do you confirm this action?")) {
+                alert("You confirmed the action.");
+            } else {
+                alert("You canceled the action.");
+            }
+        }
+
+        function showPrompt() {
+            const name = prompt("Please enter your name:");
+            alert(name ? "Hello, " + name + "!" : "No name entered.");
+        }
+        function multiplyNumbers() {
+            const num1 = parseFloat(prompt("Enter the first number:"));
+            const num2 = parseFloat(prompt("Enter the second number:"));
+            if (!isNaN(num1) && !isNaN(num2)) {
+                alert(`The product of ${num1} and ${num2} is ${num1 * num2}.`);
+            } else {
+                alert("Invalid input. Please enter valid numbers.");
+            }
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JavaScript Built-in Objects Example</title>
+    <script>
+        function demonstrateBuiltInObjects() {
+            // Window object
+            console.log("Window Object:");
+            console.log("Window inner size: ", window.innerWidth, "x", window.innerHeight);
+            alert("Window Object Demonstration Complete. Check console for details.");
+
+            // String object
+            const str = "Hello, JavaScript!";
+            console.log("String Object:");
+            console.log("String length: ", str.length);
+            console.log("Uppercase: ", str.toUpperCase());
+
+            // Number object
+            const num = 42.12345;
+            console.log("Number Object:");
+            console.log("Fixed to 2 decimals: ", num.toFixed(2));
+            console.log("Integer: ", Number.isInteger(num));
+
+            // Boolean object
+            const boolValue = Boolean("true");
+            console.log("Boolean Object:");
+            console.log("Boolean value: ", boolValue);
+
+            // Date object
+            const currentDate = new Date();
+            console.log("Date Object:");
+            console.log("Current Date and Time: ", currentDate);
+            console.log("Current Year: ", currentDate.getFullYear());
+
+            // Math object
+            console.log("Math Object:");
+            console.log("PI value: ", Math.PI);
+            console.log("Random number (0-100): ", Math.floor(Math.random() * 100));
+
+            // RegExp object
+            const regex = /javascript/i;
+            console.log("RegExp Object:");
+            console.log("Regex test (case insensitive): ", regex.test(str));
+
+            // Form object
+            const form = document.forms["exampleForm"];
+            console.log("Form Object:");
+            console.log("Form name: ", form.name);
+        }
+
+        function submitForm(event) {
+            event.preventDefault(); // Prevent form submission
+            alert("Form Submitted Successfully!");
+            demonstrateBuiltInObjects();
+        }
+    </script>
+</head>
+<body>
+    <h1>JavaScript Built-in Objects Example</h1>
+
+    <form name="exampleForm" onsubmit="submitForm(event)">
+        <label for="name">Name:</label>
+        <input type="text" id="name" name="name" required><br><br>
+
+        <label for="age">Age:</label>
+        <input type="number" id="age" name="age" required><br><br>
+
+        <input type="submit" value="Submit">
+    </form>
+</body>
+</html>

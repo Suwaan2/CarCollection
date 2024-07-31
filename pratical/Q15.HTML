@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Form Validation Example</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f2f2f2;
+            padding: 20px;
+        }
+
+        form {
+            max-width: 600px;
+            margin: 0 auto;
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 5px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        label {
+            display: block;
+            margin-bottom: 5px;
+            font-weight: bold;
+        }
+
+        input[type="text"],
+        input[type="email"],
+        input[type="tel"],
+        textarea,
+        select {
+            width: calc(100% - 12px);
+            padding: 8px;
+            margin-bottom: 10px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            box-sizing: border-box;
+            font-size: 14px;
+        }
+
+        input[type="submit"] {
+            background-color: #4CAF50;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 16px;
+        }
+
+        input[type="submit"]:hover {
+            background-color: #45a049;
+        }
+
+        .error-message {
+            color: #ff0000;
+            font-size: 12px;
+            margin-top: -10px;
+            margin-bottom: 10px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Form Validation Example</h1>
+
+    <form id="myForm" onsubmit="validateForm(event)">
+        <label for="name">Name:</label>
+        <input type="text" id="name" name="name" required>
+        <div id="nameError" class="error-message"></div>
+
+        <label for="email">Email:</label>
+        <input type="email" id="email" name="email" required>
+        <div id="emailError" class="error-message"></div>
+
+        <label for="phone">Phone Number:</label>
+        <input type="tel" id="phone" name="phone" pattern="[0-9]{10}" required>
+        <div id="phoneError" class="error-message"></div>
+
+        <label for="address">Address:</label>
+        <textarea id="address" name="address" rows="4" required></textarea>
+        <div id="addressError" class="error-message"></div>
+
+        <label for="country">Country:</label>
+        <select id="country" name="country" required>
+            <option value="">Select Country</option>
+            <option value="NPL">Nepal</option>
+            <option value="CAN">Canada</option>
+            <option value="UK">United Kingdom</option>
+            <option value="AUS">Australia</option>
+            <option value="NZ">New Zealand</option>
+        </select>
+        <div id="countryError" class="error-message"></div>
+
+        <input type="submit" value="Submit">
+    </form>
+
+    <script>
+        function validateForm(event) {
+            event.preventDefault(); // Prevent form submission
+
+            // Get form elements
+            const name = document.getElementById('name');
+            const email = document.getElementById('email');
+            const phone = document.getElementById('phone');
+            const address = document.getElementById('address');
+            const country = document.getElementById('country');
+
+            // Get error message elements
+            const nameError = document.getElementById('nameError');
+            const emailError = document.getElementById('emailError');
+            const phoneError = document.getElementById('phoneError');
+            const addressError = document.getElementById('addressError');
+            const countryError = document.getElementById('countryError');
+
+            // Reset errors
+            nameError.textContent = '';
+            emailError.textContent = '';
+            phoneError.textContent = '';
+            addressError.textContent = '';
+            countryError.textContent = '';
+
+            // Validation flags
+            let isValid = true;
+
+            // Validate name
+            if (name.value.trim() === '') {
+                nameError.textContent = 'Name is required';
+                isValid = false;
+            }
+
+            // Validate email
+            if (email.value.trim() === '') {
+                emailError.textContent = 'Email is required';
+                isValid = false;
+            } else if (!isValidEmail(email.value.trim())) {
+                emailError.textContent = 'Invalid email format';
+                isValid = false;
+            }
+
+            // Validate phone number
+            if (phone.value.trim() === '') {
+                phoneError.textContent = 'Phone number is required';
+                isValid = false;
+            } else if (!isValidPhoneNumber(phone.value.trim())) {
+                phoneError.textContent = 'Invalid phone number format (10 digits)';
+                isValid = false;
+            }
+
+            // Validate address
+            if (address.value.trim() === '') {
+                addressError.textContent = 'Address is required';
+                isValid = false;
+            }
+
+            // Validate country
+            if (country.value === '') {
+                countryError.textContent = 'Please select a country';
+                isValid = false;
+            }
+
+            // If form is valid, submit it
+            if (isValid) {
+                alert('Form submitted successfully!');
+                // You can submit the form using AJAX here if needed
+                // document.getElementById('myForm').submit();
+            }
+        }
+
+        // Helper function to validate email format
+        function isValidEmail(email) {
+            const regex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+            return regex.test(email);
+        }
+
+        // Helper function to validate phone number format (10 digits)
+        function isValidPhoneNumber(phone) {
+            const regex = /^[0-9]{10}$/;
+            return regex.test(phone);
+        }
+    </script>
+</body>
+</html>

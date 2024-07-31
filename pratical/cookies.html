@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cookie Example</title>
+</head>
+<body>
+    <h1>Cookie Example</h1>
+
+    <script>
+        // Function to set a cookie
+        function setCookie(name, value, days) {
+            let expires = "";
+            if (days) {
+                let date = new Date();
+                date.setTime(date.getTime() + (days * 24 * 60 * 60 * 1000));
+                expires = "; expires=" + date.toUTCString();
+            }
+            document.cookie = name + "=" + (value || "")  + expires + "; path=/";
+        }
+
+        // Function to get a cookie by name
+        function getCookie(name) {
+            let nameEQ = name + "=";
+            let ca = document.cookie.split(';');
+            for(let i = 0; i < ca.length; i++) {
+                let c = ca[i];
+                while (c.charAt(0) == ' ') c = c.substring(1, c.length);
+                if (c.indexOf(nameEQ) == 0) return c.substring(nameEQ.length, c.length);
+            }
+            return null;
+        }
+
+        // Function to delete a cookie by name
+        function eraseCookie(name) {   
+            document.cookie = name + '=; Max-Age=-99999999;';  
+        }
+
+        // Example usage:
+        setCookie('username', 'Suan KC', 7); // Set a cookie named 'username' that expires in 7 days
+        let username = getCookie('username'); // Retrieve the value of the cookie 'username'
+        console.log(username); // Output: john_doe
+
+        eraseCookie('username'); // Delete the cookie 'username'
+    </script>
+</body>
+</html>

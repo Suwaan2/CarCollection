@@ -1,0 +1,93 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Delius&family=Luckiest+Guy&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Poppins", sans-serif;
+    color: white;
+}
+
+header{
+    display: flex;
+    background-color: black;
+    width: 100%;
+    height: 15vh;
+    align-items: center;
+}
+.logo img{
+    height: 40%;
+    width: 30%;
+    
+}
+.nav{
+    display: flex;
+    /* padding: 120px; */
+    margin-left: 220px;
+}
+.nav li{
+    list-style: none;
+    margin: 40px;
+    font-size: 18px;
+}
+.nav li:hover{
+    color: yellow;
+    transition: ease-in 1.2s;
+    cursor: pointer;
+    font-weight: 400;
+}
+
+.hero-section{
+    background-color: rgb(24, 23, 23);
+    display: flex;
+    height: 85vh;
+}
+.hero-text{
+    text-align: center;
+    margin: 210px;
+    line-height: 40px;
+}
+.big-text{
+    font-size: 30px;
+    font-weight: 600;
+    margin-bottom: 12px;
+}
+.small-text{
+    font-size: 24px;
+    font-weight: 400;
+}
+.collection{
+    background-color: rgb(0, 0, 0);
+    height: 80vh;
+   
+
+}
+.collection p{
+    text-align: center;
+    font-size: 2rem;
+    
+}
+.collect{
+    
+    text-align: center;
+    font-size: 120px;
+    background-image: url(./Assets/pexels-pixabay-210053.jpg);
+    
+    background-size: cover;
+    background-clip: text;
+    --webkit-background-clip:text;
+    color: transparent;
+}
+.brand-name {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 40px;
+   
+}
+.brand-name img{
+    height: 10%;
+    width: 10%;
+    margin: 0px 20px;
+    
+}

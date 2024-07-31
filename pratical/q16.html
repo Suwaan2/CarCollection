@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Show/Hide HTML Elements with jQuery</title>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <style>
+        .box {
+            width: 200px;
+            height: 200px;
+            background-color: #3498db;
+            color: white;
+            text-align: center;
+            line-height: 200px;
+            margin: 10px;
+            display: none; /* Initially hidden */
+        }
+    </style>
+</head>
+<body>
+
+<h1>Show/Hide HTML Elements with jQuery</h1>
+
+<!-- Element Selector -->
+<button id="showElementBtn">Show Element</button>
+<button id="hideElementBtn">Hide Element</button>
+<div id="element" class="box">Element (by Element Selector)</div>
+
+<!-- Id Selector -->
+<!-- <button id="showIdBtn">Show Id Element</button>
+<button id="hideIdBtn">Hide Id Element</button>
+<div id="idElement" class="box">Id Element (by Id Selector)</div> -->
+
+<!-- Class Selector -->
+<button id="showClassBtn">Show Class Element</button>
+<button id="hideClassBtn">Hide Class Element</button>
+<div class="box">Class Element (by Class Selector)</div>
+<div class="box">Class Element (by Class Selector)</div>
+
+<script>
+    // Element Selector
+    $('#showElementBtn').click(function() {
+        $('div#element').show();
+    });
+    $('#hideElementBtn').click(function() {
+        $('div#element').hide();
+    });
+
+    // Id Selector
+    // $('#showIdBtn').click(function() {
+    //     $('#idElement').show();
+    // });
+    // $('#hideIdBtn').click(function() {
+    //     $('#idElement').hide();
+    // });
+
+    // Class Selector
+    $('#showClassBtn').click(function() {
+        $('.box').show();
+    });
+    $('#hideClassBtn').click(function() {
+        $('.box').hide();
+    });
+</script>
+
+</body>
+</html>

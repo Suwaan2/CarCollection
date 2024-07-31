@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>jQuery Events Example</title>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <style>
+        .container {
+            text-align: center;
+            margin-top: 20px;
+        }
+
+        .btn {
+            padding: 10px 20px;
+            font-size: 16px;
+            cursor: pointer;
+            background-color: #3498db;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            margin: 5px;
+        }
+
+        .input-field {
+            padding: 10px;
+            font-size: 16px;
+            margin: 5px;
+            width: 250px;
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <h1>jQuery Events Example</h1>
+
+    <!-- Click Event -->
+    <button class="btn" id="clickBtn">Click Me!</button>
+    <p id="clickMessage"></p>
+
+    <!-- Hover Event -->
+    <div id="hoverDiv" class="btn">Hover Me!</div>
+    <p id="hoverMessage"></p>
+
+    <!-- Change Event -->
+    <select id="selectOption" class="input-field">
+        <option value="">Select an option</option>
+        <option value="option1">Option 1</option>
+        <option value="option2">Option 2</option>
+    </select>
+    <p id="changeMessage"></p>
+
+    <!-- Keydown Event -->
+    <input type="text" id="keydownInput" class="input-field" placeholder="Type something...">
+    <p id="keydownMessage"></p>
+
+    <!-- Focus Event -->
+    <input type="text" id="focusInput" class="input-field" placeholder="Click to focus...">
+    <p id="focusMessage"></p>
+</div>
+
+<script>
+    // Click Event
+    $('#clickBtn').click(function() {
+        $('#clickMessage').text('Button clicked!');
+    });
+
+    // Hover Event
+    $('#hoverDiv').hover(
+        function() {
+            $('#hoverMessage').text('Mouse entered!');
+        },
+        function() {
+            $('#hoverMessage').text('Mouse left!');
+        }
+    );
+
+    // Change Event
+    $('#selectOption').change(function() {
+        const selectedOption = $(this).val();
+        $('#changeMessage').text('Selected option: ' + selectedOption);
+    });
+
+    // Keydown Event
+    $('#keydownInput').keydown(function() {
+        $('#keydownMessage').text('Key pressed!');
+    });
+
+    // Focus Event
+    $('#focusInput').focus(function() {
+        $('#focusMessage').text('Input focused!');
+    });
+</script>
+
+</body>
+</html>
