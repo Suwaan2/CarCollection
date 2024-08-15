@@ -3,9 +3,135 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Car Listing</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+    margin: 0;
+    padding: 20px;
+}
+
+.container {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+}
+
+.car-card {
+    background-color: white;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    padding: 15px;
+    text-align: center;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.car-card img {
+    max-width: 100%;
+    height: auto;
+    border-bottom: 1px solid #ddd;
+    padding-bottom: 15px;
+}
+
+.car-card h2 {
+    font-size: 1.2em;
+    margin: 15px 0;
+}
+
+.car-card a {
+    color: #0071ce;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.car-card p {
+    font-size: 1em;
+    color: #333;
+}
+
+.car-card button {
+    background-color: #0071ce;
+    color: white;
+    border: none;
+    padding: 10px 15px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1em;
+}
+
+.car-card button:hover {
+    background-color: #005bb5;
+}
+
+    </style>
 </head>
 <body>
-    This is bmw
+    <div class="container">
+        <div class="car-card">
+            <img src="../bmw cars/1.webp" alt="2 Series">
+            <h2>2 Series</h2>
+            <a href="#">Shop new</a>
+            <p>Starting at $39,395</p>
+            <button>Buy Now</button>
+        </div>
+        <div class="car-card">
+            <img src="../bmw cars/2.webp" alt="3 Series">
+            <h2>3 Series</h2>
+            <a href="#">Shop new</a>
+            <p>Starting at $45,495</p>
+            <button>Buy Now</button>
+        </div>
+        <div class="car-card">
+            <img src="../bmw cars/3.webp" alt="4 Series">
+            <h2>4 Series</h2>
+            <a href="#">Shop new</a>
+            <p>Starting at $50,375</p>
+            <button>Buy Now</button>
+        </div>
+        <div class="car-card">
+            <img src="../bmw cars/4.webp" alt="5 Series">
+            <h2>5 Series</h2>
+            <a href="#">Shop new</a>
+            <p>Starting at $58,895</p>
+            <button>Buy Now</button>
+        </div>
+        <div class="car-card">
+            <img src="../bmw cars/5.webp" alt="7 Series">
+            <h2>7 Series</h2>
+            <a href="#">Shop new</a>
+            <p>Starting at $97,395</p>
+            <button>Buy Now</button>
+        </div>
+        <div class="car-card">
+            <img src="../bmw cars/6.webp" alt="8 Series">
+            <h2>8 Series</h2>
+            <a href="#">Shop new</a>
+            <p>Starting at $91,975</p>
+            <button>Buy Now</button>
+        </div>
+        <div class="car-card">
+            <img src="../bmw cars/7.webp" alt="8 Series">
+            <h2>8 Series</h2>
+            <a href="#">Shop new</a>
+            <p>Starting at $91,975</p>
+            <button>Buy Now</button>
+        </div>
+        <div class="car-card">
+            <img src="../bmw cars/8.webp" alt="8 Series">
+            <h2>8 Series</h2>
+            <a href="#">Shop new</a>
+            <p>Starting at $91,975</p>
+            <button>Buy Now</button>
+        </div>
+        <div class="car-card">
+            <img src="../bmw cars/9.webp" alt="8 Series">
+            <h2>8 Series</h2>
+            <a href="#">Shop new</a>
+            <p>Starting at $91,975</p>
+            <button>Buy Now</button>
+        </div>
+    </div>
 </body>
 </html>

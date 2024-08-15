@@ -16,12 +16,19 @@ function lamboPage(){
 function porcPage(){
     window.location.href = "/collection_html/porc.html"
 }
-function retroPage(){
-    window.location.href = "/collection_html/retro.html"
+// function retroPage(){
+//     window.location.href = "/collection_html/retro.html"
+// }
+// function futurePage(){
+//     window.location.href = "/collection_html/future.html"
+// }
+// function othersPage(){
+//     window.location.href = "/collection_html/others.html"
+// }
+
+function loginPage(){
+    window.location.href = "/login.html"
 }
-function futurePage(){
-    window.location.href = "/collection_html/future.html"
-}
-function othersPage(){
-    window.location.href = "/collection_html/others.html"
+function signupPage(){
+    window.location.href = "/signup.html"
 }
