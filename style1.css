@@ -6,6 +6,7 @@
     box-sizing: border-box;
     font-family: "Poppins", sans-serif;
     color: white;
+    scroll-behavior: smooth;
 }
 
 
@@ -119,7 +120,8 @@ header{
 }
  .type{
    border: 2px solid white;
-   height: 300px;
+   border-radius: 22px;
+   height: 350px;
    width: 400px;
    padding: 12px 12px;
    margin: 12px 12px;
@@ -127,8 +129,15 @@ header{
 
 }
 .chooseCars .type img{
-    height: 300px;
-    width: 300px;
+    height: 200px;
+    width: 400px;
+    
+}
+.chooseCars .type{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    
 }
 .chooseCars .type .gallery{
     color: white;
@@ -137,4 +146,11 @@ header{
     width: 90px;
     height: 40px;
     cursor: pointer;
+    padding: 8px;
+    margin: 30px;
 }
+
+
+
+
+

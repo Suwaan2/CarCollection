@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Display XML Data</title>
+  <style>
+    table {
+      width: 100%;
+      border-collapse: collapse;
+    }
+
+    table,
+    th,
+    td {
+      border: 1px solid black;
+    }
+
+    th,
+    td {
+      padding: 10px;
+      text-align: left;
+    }
+  </style>
+</head>
+
+<body>
+
+  <h2>Student Information</h2>
+  <table id="studentTable">
+    <tr>
+      <th>Name</th>
+      <th>ID</th>
+      <th>Branch</th>
+      <th>CGPA</th>
+    </tr>
+  </table>
+
+  <script>
+    document.addEventListener("DOMContentLoaded", function () {
+  // Create a new XMLHttpRequest object
+  var xhr = new XMLHttpRequest();
+
+  // Define the URL to retrieve the XML file
+  var url = "class.XML";
+
+  // Configure the request
+  xhr.open("GET", url, true);
+
+  // Set the response type to document for XML parsing
+  xhr.responseType = "document";
+
+  // Define what happens when the request is successful
+  xhr.onload = function () {
+    if (xhr.status === 200) {
+      // Get the XML document
+      var xmlDoc = xhr.responseXML;
+
+      // Retrieve the <student> elements
+      var students = xmlDoc.getElementsByTagName("student");
+
+      // Get the table where we want to display the data
+      var table = document.getElementById("studentTable");
+
+      // Loop through the students and add rows to the table
+      for (var i = 0; i < students.length; i++) {
+        // Create a new row
+        var row = table.insertRow();
+
+        // Insert cells in the row
+        var cell1 = row.insertCell(0);
+        var cell2 = row.insertCell(1);
+        var cell3 = row.insertCell(2);
+        var cell4 = row.insertCell(3);
+
+        // Populate the cells with data
+        cell1.textContent = students[i].getElementsByTagName("name")[0].textContent;
+        cell2.textContent = students[i].getElementsByTagName("id")[0].textContent;
+        cell3.textContent = students[i].getElementsByTagName("branch")[0].textContent;
+        cell4.textContent = students[i].getElementsByTagName("cgpa")[0].textContent;
+      }
+    }
+  };
+
+  // Define what happens in case of an error
+  xhr.onerror = function () {
+    console.error("An error occurred while trying to load the XML file.");
+  };
+
+  // Send the request
+  xhr.send();
+});
+
+  </script>
+</body>
+
+</html>
